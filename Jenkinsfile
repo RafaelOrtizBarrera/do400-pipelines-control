@@ -9,29 +9,31 @@ pipeline {
             }
 
       }
+     stage('Run Tests') {
 
-       stages {
+           parallel {
 
-             stage('Backend Tests') {
+                 stage('Backend Tests') {
 
-                   steps {
+                       steps {
 
-                         sh 'node ./backend/test.js'
+                             sh 'node ./backend/test.js'
 
-                   }
+                       }
 
-             }
+                 }
 
-              stage('Frontend Tests') {
+                  stage('Frontend Tests') {
 
-                    steps {
+                        steps {
 
-                          sh 'node ./frontend/test.js'
+                              sh 'node ./frontend/test.js'
 
-                    }
+                        }
 
-              }
+                  }
 
-       }
+           }
 
+     }
 }
