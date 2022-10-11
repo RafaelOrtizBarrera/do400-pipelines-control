@@ -19,7 +19,7 @@ pipeline {
 
                          steps {
 
-                             sh 'node ./backend/test.js'
+                             sh 'node ./simple-webapp/backend/test.js'
 
                          }
 
@@ -29,7 +29,7 @@ pipeline {
 
                          steps {
 
-                              sh 'node ./frontend/test.js'
+                              sh 'node ./simple-webapp/frontend/test.js'
 
                         }
 
